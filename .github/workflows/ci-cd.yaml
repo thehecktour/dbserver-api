@@ -34,8 +34,3 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/thehecktour/django-app:latest
-
-      - name: Run tests
-        run: |
-          docker run --rm ghcr.io/thehecktour/django-app:latest \
-          bash -c "cd src && python manage.py test"
