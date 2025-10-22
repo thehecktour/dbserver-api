@@ -12,7 +12,7 @@ PORT = 8000
 # Main commands
 # ===========================
 
-.PHONY: help build run stop clean test shell install local migrate
+.PHONY: help build run stop clean test shell install local migrate pre-commit
 
 help:
 	@echo "Available commands:"
@@ -25,6 +25,7 @@ help:
 	@echo "  make install      -> Install dependencies with Poetry"
 	@echo "  make local        -> Run Django local development server"
 	@echo "  make migrate      -> Run Django migrations inside the container"
+	@echo "  make pre-commit   -> Run all pre-commit hooks manually"
 
 # Build Docker image
 build:
@@ -64,3 +65,7 @@ migrate:
 # Run tests with pytest
 test:
 	poetry run pytest -v --cov=src tests/
+
+# Run pre-commit hooks on all files
+pre-commit:
+	poetry run pre-commit run --all-files
