@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
+    "api",
 ]
 
 MIDDLEWARE = [
@@ -48,7 +50,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "dbserver.urls"
+ROOT_URLCONF = "src.dbserver.urls"
 
 TEMPLATES = [
     {
@@ -65,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "dbserver.wsgi.application"
+WSGI_APPLICATION = "src.dbserver.wsgi.application"
 
 
 # Database
