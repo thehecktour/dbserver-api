@@ -31,5 +31,9 @@ EXPOSE 8000
 # Set working directory to src (where manage.py is)
 WORKDIR /app/src
 
+# Ensure Python can find the dbserver and api packages
+ENV PYTHONPATH=/app/src
+ENV DJANGO_SETTINGS_MODULE=dbserver.settings
+
 # Default command to run Django
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
